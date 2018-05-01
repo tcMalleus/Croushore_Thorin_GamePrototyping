@@ -42,13 +42,11 @@ public class PlayerBounceScript : MonoBehaviour {
             _rigid.velocity = Vector2.zero;
             _rigid.AddForce(Vector2.up * BounceForce, ForceMode2D.Impulse);
         }
-    }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
         if (collision.gameObject.tag == "Kill")
         {
             Destroy(gameObject);
         }
     }
+
 }
