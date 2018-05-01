@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerBounceScript : MonoBehaviour {
 
     public float BounceForce;
+    public Animator Anim;
 
     private Rigidbody2D _rigid;
 
@@ -20,6 +21,11 @@ public class PlayerBounceScript : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
+
+        if (Input.GetKey("space"))
+        {
+            Anim.SetTrigger("AccelerateTrigger");
+        }
 
     }
 

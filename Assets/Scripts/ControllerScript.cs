@@ -20,7 +20,8 @@ public class ControllerScript : MonoBehaviour {
 
         if (Input.GetKeyDown("space"))
         {
-            _rigid.AddForce(Vector2.left * MoveSpeed, ForceMode2D.Impulse);
+            _rigid.AddForce(Vector2.left * MoveSpeed, ForceMode2D.Impulse); 
+            
         }
     }
 }
