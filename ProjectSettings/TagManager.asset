@@ -6,7 +6,8 @@ TagManager:
   tags:
   - BounceTop
   - BounceBottom
-  - Kill
+  - Win
+  - Lose
   layers:
   - Default
   - TransparentFX
@@ -41,6 +42,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Bottom
+    uniqueID: 4195902511
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

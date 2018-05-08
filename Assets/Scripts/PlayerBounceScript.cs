@@ -6,6 +6,8 @@ public class PlayerBounceScript : MonoBehaviour {
 
     public float BounceForce;
     public Animator Anim;
+    public GameObject LoseUI;
+    public GameObject WinUI;
 
     private Rigidbody2D _rigid;
 
@@ -14,7 +16,11 @@ public class PlayerBounceScript : MonoBehaviour {
     void Start () {
 
         _rigid = GetComponent<Rigidbody2D>();
+        LoseUI = GameObject.Find("LoseUI");
+        WinUI = GameObject.Find("WinUI");
 
+        LoseUI.SetActive(false);
+        WinUI.SetActive(false);
         _rigid.AddForce(Vector2.up * BounceForce, ForceMode2D.Impulse);
 
 	}
@@ -43,9 +49,15 @@ public class PlayerBounceScript : MonoBehaviour {
             _rigid.AddForce(Vector2.up * BounceForce, ForceMode2D.Impulse);
         }
 
-        if (collision.gameObject.tag == "Kill")
+        if (collision.gameObject.tag == "Lose")
         {
+            LoseUI.SetActive(true);
             Destroy(gameObject);
+        }
+
+        if (collision.gameObject.tag == "Win")
+        {
+            WinUI.SetActive(true);
         }
     }
 
