@@ -58,6 +58,7 @@ public class PlayerBounceScript : MonoBehaviour {
         if (collision.gameObject.tag == "Win")
         {
             WinUI.SetActive(true);
+            Destroy(LoseUI);
         }
     }
 
